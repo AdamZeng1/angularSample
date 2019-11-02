@@ -1,38 +1,62 @@
-<div class="container">
-<div class="row">
-<div class="col-xs-12">
-<ol>
-<li>Create two components manually or with CLI: WarningAlert and SuccessAlert</li>
-<li>Output them beneath each other in the AppComponent</li>
-<li>Output a warning or success message in the Component</li>
-<li>Style the component appropriately (maybe some red/green text?)</li>
-</ol>
-<p>Use external or internal templates and styles!</p>
-<p>Feel free to create more components, nest them into each other or play around with different selector</p>
-<hr>
-<!--<app-warning-alert></app-warning-alert>-->
-<!--<app-success-alert></app-success-alert>-->
-<app-servers></app-servers>
-</div>
-</div>
-</div>
 <!--<div class="container">-->
-  <!--<div class="row">-->
-    <!--<div class="col-xs-12">-->
-      <!--<ol>-->
-        <!--<li>Add Input field which updates a property ('username') via Two-Way-Binding</li>-->
-        <!--<li>Output the username property via string interpolation (in the paragraph below the input)</li>-->
-        <!--<li>Add a button which may only be clicked if the username is NOT an empty string</li>-->
-        <!--<li>Upon clicking the button, the username should be reset to the empty string</li>-->
-      <!--</ol>-->
-      <!--<hr>-->
-      <!--<label>Username</label>-->
-      <!--<input type="text" class="form-control" [(ngModel)]="username">-->
-      <!--<p>{{username}}</p>-->
-      <!--<button class="btn btn-primary" [disabled] = "username==='' "-->
-      <!--(click)="username='' ">Reset User</button>-->
-    <!--</div>-->
-  <!--</div>-->
+<!--<div class="row">-->
+<!--<div class="col-xs-12">-->
+<!--<ol>-->
+<!--<li>Create two components manually or with CLI: WarningAlert and SuccessAlert</li>-->
+<!--<li>Output them beneath each other in the AppComponent</li>-->
+<!--<li>Output a warning or success message in the Component</li>-->
+<!--<li>Style the component appropriately (maybe some red/green text?)</li>-->
+<!--</ol>-->
+<!--<p>Use external or internal templates and styles!</p>-->
+<!--<p>Feel free to create more components, nest them into each other or play around with different selector</p>-->
+<!--<hr>-->
+<!--&lt;!&ndash;<app-warning-alert></app-warning-alert>&ndash;&gt;-->
+<!--&lt;!&ndash;<app-success-alert></app-success-alert>&ndash;&gt;-->
+<!--<app-servers></app-servers>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="container">-->
+<!--<div class="row">-->
+<!--<div class="col-xs-12">-->
+<!--<ol>-->
+<!--<li>Add Input field which updates a property ('username') via Two-Way-Binding</li>-->
+<!--<li>Output the username property via string interpolation (in the paragraph below the input)</li>-->
+<!--<li>Add a button which may only be clicked if the username is NOT an empty string</li>-->
+<!--<li>Upon clicking the button, the username should be reset to the empty string</li>-->
+<!--</ol>-->
+<!--<hr>-->
+<!--<label>Username</label>-->
+<!--<input type="text" class="form-control" [(ngModel)]="username">-->
+<!--<p>{{username}}</p>-->
+<!--<button class="btn btn-primary" [disabled] = "username==='' "-->
+<!--(click)="username='' ">Reset User</button>-->
+<!--</div>-->
+<!--</div>-->
 <!--</div>-->
 
 
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <ol>
+        <li>Add A button which says 'Display Details'</li>
+        <li>Add a paragraph with any content of your choice (e.g. 'Secret Password = tuna')</li>
+        <li>Toggle the displaying of that paragraph with the button created in the firs step</li>
+        <li>Log all button clicks in an array and output the array below the secret paragraph
+          (maybe log a timestamp or simply an incrementing number)
+        </li>
+        <li>Starting at the 5th log item, give all future log items a blue background (via ngStyle) and white color
+          (ngClass)
+        </li>
+      </ol>
+      <hr>
+      <button class="btn btn-primary" (click)="onToggleDisplay()">Display Details</button>
+      <p *ngIf="showSecret">Secret Password = tuna</p>
+      <div *ngFor="let logItem of log"
+           [ngStyle]="{backgroundColor:getColor(logItem)}"
+           [ngClass]="{'white-text':logItem>=5}"
+      >{{logItem}}</div>
+    </div>
+  </div>
+</div>
